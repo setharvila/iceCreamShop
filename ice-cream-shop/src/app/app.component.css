@@ -1,0 +1,12 @@
+a{
+    font-family: "area-normal", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.navbar-brand {
+    font-family: "brevia", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    color: #B37F95;
+}
