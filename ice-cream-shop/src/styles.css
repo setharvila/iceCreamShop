@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    font-family: "area-normal", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.title{
+    font-family: "brevia", sans-serif;
+    font-weight: 800;
+    font-style: italic;
+    font-size: x-large;
+}
