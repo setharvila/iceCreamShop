@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Account} from './account';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,10 @@ import { Injectable } from '@angular/core';
 export class AccountService {
 
   constructor() { }
+
+
+
+
+
 }
+
