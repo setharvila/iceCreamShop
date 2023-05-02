@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ice-cream-shop';
+  displayHome: boolean = true;
+  displayMenu: boolean = false;
+
 }
