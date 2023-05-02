@@ -10,3 +10,14 @@ a{
     font-style: italic;
     color: #B37F95;
 }
+
+
+.footer{
+    text-align: center;
+    color: white;
+    background-color: #5E6D8C;
+    padding-top: 100px;
+    padding-bottom: 10px;
+    font-size: small;
+    line-height: 0;
+}

@@ -1,3 +1,223 @@
+.bodyContent{
+    background-color: whitesmoke;
+    background-image: url("../../../assets/images/bgImg.png");
+    background-size: cover;
+    background-repeat: repeat;
+}
+
+#hero-img{
+    background-color: black;
+    width: 100%;
+    mix-blend-mode: darken;
+    -webkit-mask-image: url("../../../assets/images/HeroMask.png");
+    mask-image: url("../../../assets/images/HeroMask.png");
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100%;
+    position: relative;
+    background-image: url("../../../assets/images/HeroOverlay.png");
+}
+
 .hero{
-    background-color: #FDF5E2;
+    position: relative;
+    mask-image: linear-gradient(45deg, black, white);
+    z-index: 1;
+    margin-bottom: -300px;
+}
+
+.heroText{
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    margin: 0;
+    padding: 0;
+}
+
+.hero h2{
+    font-family: brevia, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color:#FFF5FA;
+    z-index: 2;
+    font-size: large;
+}
+.hero h1{
+    font-family: brevia, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    color:#B2FFBA;
+}
+
+.btn-pink-fill{
+    color: #FFF5FA;
+    background-color: #E0698A;
+    border: none;
+    border-radius: 15px;
+    font-family: area-normal, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: small;
+    padding: 5px 10px;
+}
+.btn-pink-fill:hover{
+    background-color: #9d3d58;
+}
+
+
+.btn-white-fill{
+    color: #E0698A;
+    background-color: #FFF5FA;
+    border: none;
+    border-radius: 15px;
+    font-family: area-normal, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: small;
+    padding: 5px 10px; 
+}
+
+.btn-white-fill:hover{
+    background-color: #da98b8;
+    color: #FFF5FA;
+}
+
+.values{
+    padding: 0 10%;
+    min-height: 250px;
+}
+
+.values h1{
+    color: #5E6D8C;
+    font-family: brevia, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    z-index: 3;
+    font-size: large;
+}
+
+.values p{
+    left: 0;
+    color: #5E6D8C;
+    font-size: small;
+}
+
+.values img{
+    float: right;
+    margin: 10px;
+}
+
+.boxes{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    
+}
+
+.hours, .newsletter{
+    width: 33%;
+    height: 250px;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.hours h2, .newsletter h2{
+    color: white;
+    font-family: brevia, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: large;
+}
+
+.hours p, .newsletter p{
+    color: white;
+    font-family: area-normal, sans-serif;
+    font-weight:normal;
+    font-style: normal;
+    font-size: small;
+}
+
+.hours{
+    background-color: #E0698A;
+    
+}
+
+.newsletter{
+    background-color: #5E6D8C;
+    
+}
+
+
+.team{
+    padding: 0 10%;
+    min-height: 250px;
+    
+}
+.team h1{
+    color: #5E6D8C;
+    font-family: brevia, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    z-index: 3;
+    font-size: large;
+}
+
+.team h3{
+    color: #E0698A;
+    font-family: area-normal, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    z-index: 3;
+    font-size: small;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.empCard{
+    margin: 10px;
+    text-align: center;
+    font-family: area-normal, sans-serif;
+}
+
+.empCard img{
+    width: 100px;
+}
+
+.empCard h4{
+    font-weight: bold;
+    font-size: medium;
+    color: #5E6D8C;
+
+}
+.empCard h5{
+    color: #3a3b3d;
+    font-size: x-small;
+    font-weight: bold;
+}
+
+
+.homeFooter{
+    margin-top: 100px;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.homeFooter h3{
+    color: #5E6D8C;
+    font-family: brevia, sans-serif;
+    font-weight: 700;
+}
+
+.homeFooter p{
+    color: #3a3b3d;
+    font-family: area-normal, sans-serif;
+    font-weight: 500;
+    font-size: small;
+}
+
+.homeFooter em{
+    font-style: italic;
 }
