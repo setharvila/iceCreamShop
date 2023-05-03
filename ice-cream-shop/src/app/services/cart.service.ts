@@ -1,28 +1,25 @@
-import { Injectable } from '@angular/core';
-import { Injectable } from '@angular/core';
+  import { Injectable } from '@angular/core';
+  import { menuEntry } from '../model/menuEntry';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  sid: number = 0;
-  sname: string = '';
-  sprice: string = 0;
-  constructor(private menu: menu-data) {}
-
-  ngOnInit() {}
-
-  addItem() {
-    const newItem: Contact = {
-      id: this.sid,
-      name: this.sname,
-      price: this.sprice,
+  items: menuEntry[] = [];
+  
+  addItemToCart(id: number, name: string, price: number) {
+    const newItem: Account = {
+      id: this.menu.id,
+      name: this.menu.name,
+      price: this.menu.price,
     };
-    this.cntctService.addContact(newItem);
+    this.items.push(newItem);
   }
   
-  editContact(id: number, name: string, price: number) {
+  editItem(id: number, name: string, description: string, allergyInfo: string, price: number) {
     this.items[id].name = fName;
+    this.items[id].description = description;
+    this.items[id].allergyInfo = allergyInfo;
     this.items[id].price = price;
   }
 
