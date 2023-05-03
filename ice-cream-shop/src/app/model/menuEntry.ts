@@ -4,4 +4,5 @@ export interface menuEntry {
   price: number;
   description: String;
   allergyInfo: String;
+  category: String;
 }

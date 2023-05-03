@@ -1,0 +1,46 @@
+<div>
+  <button type="button" class="btn btn-primary" (click)="toMenu()">Menu</button>
+  <button type="button" class="btn btn-primary" (click)="toEmployee()">
+    Employee
+  </button>
+  <button type="button" class="btn btn-primary" (click)="toPromotion()">
+    Promotions
+  </button>
+</div>
+<div>
+  {{ menu }}
+  {{ employee }}
+  {{ promotion }}
+</div>
+<div *ngIf="menu">
+  <div class="card" *ngFor="let item of Menu">
+    <h2>{{ item.name }} ${{item.price}}</h2>
+    CATEGORY: {{ item.category }}
+
+    <h6>{{ item.description }}</h6>
+    <p>Contains: {{item.allergyInfo}}</p>
+
+  </div>
+</div>
+
+<div *ngIf="employee">
+  <div class="card" *ngFor="let item of Menu">
+    <h2>{{ item.name }} ${{item.price}}</h2>
+    CATEGORY: {{ item.category }}
+
+    <h6>{{ item.description }}</h6>
+    <p>Contains: {{item.allergyInfo}}</p>
+
+  </div>
+</div>
+
+<div *ngIf="promotion">
+  <div class="card" *ngFor="let item of Menu">
+    <h2>{{ item.name }} ${{item.price}}</h2>
+    CATEGORY: {{ item.category }}
+
+    <h6>{{ item.description }}</h6>
+    <p>Contains: {{item.allergyInfo}}</p>
+
+  </div>
+</div>

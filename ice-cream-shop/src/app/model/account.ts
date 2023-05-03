@@ -5,4 +5,6 @@ export interface Account {
     phone: number;
     emailAddress: string;
     password: string;
+    isEmployee: boolean;
+    isManager: boolean;
 }
