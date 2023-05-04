@@ -6,13 +6,13 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./login-bar.component.css']
 })
 export class LoginBarComponent {
-  // isEmployee: boolean = true;
-  // isCustomer: boolean = true;
-  // isNotLoggedIn: boolean = true;
-
   isEmployee: boolean = true;
-  isCustomer: boolean = false;
-  isNotLoggedIn: boolean = false;
+  isCustomer: boolean = true;
+  isNotLoggedIn: boolean = true;
+
+  // isEmployee: boolean = true;
+  // isCustomer: boolean = false;
+  // isNotLoggedIn: boolean = false;
 
   @Output() newItemEvent = new EventEmitter<string>();
 
