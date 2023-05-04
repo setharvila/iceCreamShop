@@ -1,0 +1,10 @@
+button{
+    margin : 10px;
+    border-color: black;
+    border-width: 5px;
+}
+div.card{
+    margin:10px;
+    border-width: 5px;
+    padding: 5px;
+}
