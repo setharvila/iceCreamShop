@@ -1,30 +1,46 @@
   import { Injectable } from '@angular/core';
-  import { menuEntry } from '../model/menuEntry';
+  import { MENU } from '../data/menu-data';
+  import { Cart } from '../model/cartEntry';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  items: menuEntry[] = [];
+  items: Cart[] = [];
+  count: number = 1;
+  MENU: any = MENU;
+  updatedPrice: number = 0;
   
-  addItemToCart(id: number, name: string, price: number) {
-    const newItem: Account = {
-      id: this.menu.id,
-      name: this.menu.name,
-      price: this.menu.price,
+  addItemToCart(name: string, price: number) {
+    const newItem: Cart = {
+      id: this.MENU.id,
+      name: this.MENU.name,
+      price: this.MENU.price,
     };
     this.items.push(newItem);
   }
-  
-  editItem(id: number, name: string, description: string, allergyInfo: string, price: number) {
-    this.items[id].name = fName;
-    this.items[id].description = description;
-    this.items[id].allergyInfo = allergyInfo;
-    this.items[id].price = price;
+
+  addMore(item: Cart){
+    this.updatedPrice = item.price;
+    this.updatedPrice = this.updatedPrice + item.price;
+    item.price = this.updatedPrice;
+    this.count++;
   }
 
-  deleteContact(contact: Contact) {
-    const index = this.contactList.indexOf(contact);
-    if (index >= 0) this.contactList.splice(index, 1);
+  addLess(item: Cart){
+    if(this.count > 0){
+      this.updatedPrice = item.price;
+      this.updatedPrice = this.updatedPrice - item.price;
+      item.price = this.updatedPrice;
+      this.count--;
+    }
+    else{
+      this.deleteItem(item);
+    }
+  }
+
+  deleteItem(item: Cart) {
+    const index = this.items.indexOf(item);
+    if (index >= 0) this.items.splice(index, 1);
   } 
 }
