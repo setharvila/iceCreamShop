@@ -6,41 +6,62 @@
   <button type="button" class="btn btn-primary" (click)="toPromotion()">
     Promotions
   </button>
-</div>
-<div>
-  {{ menu }}
-  {{ employee }}
-  {{ promotion }}
+  <button type="button" class="btn btn-primary" (click)="toAdd()">Add Data</button>
 </div>
 <div *ngIf="menu">
   <div class="card" *ngFor="let item of Menu">
-    <h2>{{ item.name }} ${{item.price}}</h2>
+    <h2>{{ item.name }} ${{ item.price }}</h2>
     CATEGORY: {{ item.category }}
 
     <h6>{{ item.description }}</h6>
-    <p>Contains: {{item.allergyInfo}}</p>
-
+    <p>Contains: {{ item.allergyInfo }}</p>
+    <div>
+      <button type="button" class="btn btn-primary" (click)="editItem(item.id)">
+        Edit
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="delete(item.id)"
+      >
+        delete
+      </button>
+    </div>
   </div>
 </div>
 
 <div *ngIf="employee">
+  <!--these next for loop runs through menu, since there is no account array-->
   <div class="card" *ngFor="let item of Menu">
-    <h2>{{ item.name }} ${{item.price}}</h2>
+    <h2>{{ item.name }} ${{ item.price }}</h2>
     CATEGORY: {{ item.category }}
 
     <h6>{{ item.description }}</h6>
-    <p>Contains: {{item.allergyInfo}}</p>
-
+    <p>Contains: {{ item.allergyInfo }}</p>
   </div>
 </div>
 
 <div *ngIf="promotion">
-  <div class="card" *ngFor="let item of Menu">
-    <h2>{{ item.name }} ${{item.price}}</h2>
-    CATEGORY: {{ item.category }}
+  <div class="card" *ngFor="let item of Promotions">
+    <h2>{{ item.name }} CATEGORY: {{ item.category }}</h2>
 
     <h6>{{ item.description }}</h6>
-    <p>Contains: {{item.allergyInfo}}</p>
 
+    <div>
+      <button type="button" class="btn btn-primary" (click)="editItem(item.id)">
+        Edit
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="delete(item.id)"
+      >
+        delete
+      </button>
+    </div>
   </div>
+</div>
+
+<div *ngIf = "otherPage">
+  <app-edit></app-edit>
 </div>
