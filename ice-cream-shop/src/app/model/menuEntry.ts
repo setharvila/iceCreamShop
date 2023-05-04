@@ -1,7 +1,8 @@
 export interface menuEntry {
   id: number;
-  name: String;
+  name: string;
   price: number;
-  description: String;
-  allergyInfo: String;
+  description: string;
+  allergyInfo: string;
+  category: string;
 }
