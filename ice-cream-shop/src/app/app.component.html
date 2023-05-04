@@ -1,3 +1,4 @@
+<app-login-bar (newItemEvent)="displayPortal()"></app-login-bar>
 <nav class="navbar navbar-expand navbar-light bg-light px-5">
   <a class="navbar-brand" href="#"
     ><img src="../assets/images/cone.png" height="45" alt="TICS Logo" /> The Ice
@@ -9,16 +10,6 @@
       <li class="nav-item">
         <a
           class="nav-link"
-          href=""
-          (click)="
-            displayHome = true; displayMenu = false; displayManage = false
-          "
-          >Home</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
           href="#"
           (click)="
             displayHome = false; displayMenu = true; displayManage = false
@@ -27,16 +18,13 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-      <li class="nav-item">
         <a
           class="nav-link"
-          href="#"
+          href=""
           (click)="
-            displayHome = false; displayMenu = false; displayManage = true
+            displayHome = true; displayMenu = false; displayManage = false
           "
-          >Manage</a
+          >Home</a
         >
       </li>
     </ul>
