@@ -1,0 +1,96 @@
+.bodyContent {
+  background-color: whitesmoke;
+  background-image: url("../../../assets/images/bgImg.png");
+  background-size: cover;
+  background-repeat: repeat;
+  padding-bottom: 15px;
+}
+
+.btn-pink-fill {
+  color: #fff5fa;
+  background-color: #e0698a;
+  border: none;
+  border-radius: 15px;
+  font-family: area-normal, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: small;
+  padding: 5px 10px;
+}
+.btn-pink-fill:hover {
+  background-color: #9d3d58;
+}
+
+.btn-white-fill {
+  color: #e0698a;
+  background-color: #fff5fa;
+  border: none;
+  border-radius: 15px;
+  font-family: area-normal, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: small;
+  padding: 5px 10px;
+}
+
+.btn-white-fill:hover {
+  background-color: #da98b8;
+  color: #fff5fa;
+}
+
+.menuHeading {
+  padding: 5% 10%;
+  text-align: center;
+}
+
+.menuHeading h1 {
+  color: #e0698a;
+  font-family: brevia, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  z-index: 3;
+  font-size: x-large;
+}
+
+.menuHeading p {
+  left: 0;
+  color: #5e6d8c;
+  font-size: small;
+}
+
+.menuCard {
+  background-color: #fdf5e2;
+  margin: 0 10%;
+  margin-bottom: 15px;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.menuCard h3 {
+  color: #5e6d8c;
+  font-family: brevia, sans-serif;
+  font-weight: 700;
+  font-size: large;
+}
+
+.menuCard h4 {
+  color: #e0698a;
+  font-family: brevia, sans-serif;
+  font-weight: 700;
+  font-size: small;
+  line-height: 0;
+  padding-top: 5px;
+}
+
+.menuCard p {
+  color: black;
+  font-family: area-normal, sans-serif;
+  font-weight: 500;
+  font-size: small;
+}
+
+#cartQty {
+  width: 100px;
+  display: inline;
+  margin-right: 10px;
+}

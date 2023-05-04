@@ -7,6 +7,8 @@ import { MenuComponent } from './components/menu/menu.component';
 import { ManageComponent } from './components/manage/manage.component';
 import { EditComponent } from './components/edit/edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginBarComponent } from './components/login-bar/login-bar.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     MenuComponent,
     ManageComponent,
     EditComponent,
+    LoginBarComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { menuEntry } from '../model/menuEntry';
 
-let n : number=0;
+let n : number = 0;
 
 export const MENU: menuEntry[] = [
   {
@@ -13,11 +13,35 @@ export const MENU: menuEntry[] = [
   },
   {
     id: n++,
-    name: 'Strawberry Blizzyz',
-    description: 'Strawberry twist on the classic Blizzy',
+    name: 'The Cream',
+    description: '3 Mega Scoops of Ice Cream served on a souvenier plate ',
+    category: "Cones",
+    allergyInfo: 'Dairy',
+    price: 10.19,
+  },
+  {
+    id: n++,
+    name: 'Strawberry Scoop',
+    description: 'Sweet Strawberry Syrup Smothered Single Scoop',
+    category: "Cones",
+    allergyInfo: 'Dairy',
+    price: 2.29,
+  },
+  {
+    id: n++,
+    name: 'Double Choccy Chocolate Chip',
+    description: 'Scoop of chocolate ice cream with a chocolate chip mix-in',
+    category: "Cones",
+    allergyInfo: 'Dairy',
+    price: 2.59,
+  },
+  {
+    id: n++,
+    name: 'Classic Blizzyz',
+    description: 'The classic, World Famous Blizzy',
     category: "Blizzyz",
     allergyInfo: 'Dairy',
-    price: 3.49,
+    price: 3.19,
   },
   {
     id: n++,
@@ -29,16 +53,40 @@ export const MENU: menuEntry[] = [
   },
   {
     id: n++,
-    name: 'Strawberry Blizzyz',
-    description: 'Strawberry twist on the classic Blizzy',
+    name: 'Chocolate Blizzyz',
+    description: 'Chocolate covered classic Blizzy',
     category: "Blizzyz",
     allergyInfo: 'Dairy',
     price: 3.49,
+  },
+  {
+    id: n++,
+    name: 'Cookie Dough Blizzyz',
+    description: 'Classic Blizzy with chunks of cookie dough mixed in',
+    category: "Blizzyz",
+    allergyInfo: 'Dairy',
+    price: 3.99,
+  },
+  {
+    id: n++,
+    name: 'World Famous Malt',
+    description: 'Our classic twist on delicious malts',
+    category: 'Shakes/Malts',
+    allergyInfo: 'Dairy',
+    price: 4.39,
   },
   {
     id: n++,
     name: 'Chocolate Malt',
     description: 'Chocolate flavor infused in our famous malt',
+    category: 'Shakes/Malts',
+    allergyInfo: 'Dairy',
+    price: 4.59,
+  },
+  {
+    id: n++,
+    name: 'Strawberry Malt',
+    description: 'Strawberry flavor infused in our famous malt',
     category: 'Shakes/Malts',
     allergyInfo: 'Dairy',
     price: 4.59,
