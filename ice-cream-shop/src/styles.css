@@ -1,12 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    font-family: "area-normal", sans-serif;
-    font-weight: normal;
-    font-style: normal;
+* {
+  font-family: "area-normal", sans-serif;
+  font-weight: normal;
+  font-style: normal;
 }
 
-.title{
-    font-family: "brevia", sans-serif;
-    font-weight: 800;
-    font-size: x-large;
+.title {
+  font-family: "brevia", sans-serif;
+  font-weight: 800;
+  font-size: x-large;
+}
+
+.btn-pink-fill {
+  color: #fff5fa;
+  background-color: #e0698a;
+  border: none;
+  border-radius: 15px;
+  font-family: area-normal, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: small;
+  padding: 5px 10px;
+}
+.btn-pink-fill:hover {
+  background-color: #9d3d58;
+}
+
+.btn-white-fill {
+  color: #e0698a;
+  background-color: #fff5fa;
+  border: none;
+  border-radius: 15px;
+  font-family: area-normal, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: small;
+  padding: 5px 10px;
+}
+
+.btn-white-fill:hover {
+  background-color: #da98b8;
+  color: #fff5fa;
 }
