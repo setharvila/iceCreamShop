@@ -9,6 +9,7 @@ import {map} from 'rxjs/operators';
 export class AccountService {
 
   constructor() { }
+
   nextID: number = 0;
 
   ACCOUNTS: Account [] = [
@@ -19,7 +20,6 @@ export class AccountService {
     {id: this.getNextID(), firstName: 'Howard', lastName: 'Wolowitz', phone: 7015551233, emailAddress: 'wolowitz.howard@gmail.com',
      password: 'sweetbernadette', isEmployee: false, isManger: false}
   ];
-
   getNextID(): number {
     return this.nextID++;
   }
@@ -32,7 +32,7 @@ export class AccountService {
              isNewEmployee: boolean, 
              isNewManager: boolean){
     const newAccount: Account = {
-      id: this.getNextID() ,
+      id: this.getNextID(),
       firstName: fname, 
       lastName: lname, 
       phone: phone,
@@ -44,6 +44,7 @@ export class AccountService {
     this.ACCOUNTS.push(newAccount);
   }
 
+
   editAccount(id: number, 
               newFirstName: string, 
               newLastName: string, 
@@ -52,6 +53,7 @@ export class AccountService {
               newPassword: string, 
               isNewEmployee: boolean, 
               isNewManager: boolean){
+
     this.ACCOUNTS[id].firstName = newFirstName
     this.ACCOUNTS[id].lastName = newLastName;
     this.ACCOUNTS[id].phone = newPhone;

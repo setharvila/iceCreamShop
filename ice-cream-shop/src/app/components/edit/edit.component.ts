@@ -72,7 +72,7 @@ export class EditComponent {
       this.toPromotion();
     }    
     if(this.mc.last == "menu"){
-      this.toEdit();
+      this.toMenu();
     }
     if(this.mc.last == "employee"){
       this.toEmployee();
