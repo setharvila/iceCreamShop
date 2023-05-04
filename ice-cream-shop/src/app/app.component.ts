@@ -10,4 +10,11 @@ export class AppComponent {
   displayHome: boolean = true;
   displayMenu: boolean = false;
   displayManage: boolean = false;
+
+
+  displayPortal(){
+    this.displayManage = true;
+    this.displayHome = false;
+    this.displayMenu = false;
+  }
 }
