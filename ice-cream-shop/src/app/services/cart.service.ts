@@ -1,30 +1,24 @@
   import { Injectable } from '@angular/core';
-  import { menuEntry } from '../model/menuEntry';
+  import { MENU } from '../data/menu-data';
+  import { Cart } from '../model/cartEntry';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  items: menuEntry[] = [];
+  items: Cart[] = [];
   
   addItemToCart(id: number, name: string, price: number) {
-    const newItem: Account = {
-      id: this.menu.id,
-      name: this.menu.name,
-      price: this.menu.price,
+    const newItem: Cart = {
+      id: this.MENU.id,
+      name: this.MENU.name,
+      price: this.MENU.price,
     };
     this.items.push(newItem);
   }
-  
-  editItem(id: number, name: string, description: string, allergyInfo: string, price: number) {
-    this.items[id].name = fName;
-    this.items[id].description = description;
-    this.items[id].allergyInfo = allergyInfo;
-    this.items[id].price = price;
-  }
 
-  deleteContact(contact: Contact) {
-    const index = this.contactList.indexOf(contact);
-    if (index >= 0) this.contactList.splice(index, 1);
+  deleteItem(item: Cart) {
+    const index = this.items.indexOf(item);
+    if (index >= 0) this.items.splice(index, 1);
   } 
 }
