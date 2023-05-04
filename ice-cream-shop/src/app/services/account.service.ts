@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Account} from '../model/account';
+import{HttpClient} from '@angular/common/http';
+import {map} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +12,14 @@ export class AccountService {
 
   nextID: number = 0;
 
-
-  ACCOUNTS: Account [] = [];
-
+  ACCOUNTS: Account [] = [
+    {id: this.getNextID(), firstName: 'Sheldon', lastName: 'Cooper', phone: 7015554545, emailAddress: 'cooper.sheldon@gmail.com', 
+     password: 'ilovepenny', isEmployee: true, isManager: false},
+    {id: this.getNextID(), firstName: 'Penny', lastName: 'Hofstadter', phone: 7015556789, emailAddress: 'hofstadter.penny@gmail.com', 
+     password: 'sheldonsucks', isEmployee: false, isManager: false},
+    {id: this.getNextID(), firstName: 'Howard', lastName: 'Wolowitz', phone: 7015551233, emailAddress: 'wolowitz.howard@gmail.com',
+     password: 'sweetbernadette', isEmployee: false, isManger: false}
+  ];
   getNextID(): number {
     return this.nextID++;
   }
@@ -70,5 +77,6 @@ export class AccountService {
       return false;
     }
   }
+
 }
 
