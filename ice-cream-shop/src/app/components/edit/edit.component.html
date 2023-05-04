@@ -1,0 +1,146 @@
+<div>
+  <div *ngIf="add">
+    <h3>Choose what you would like to add:</h3>
+    <button type="button" class="btn btn-primary" (click)="toMenu()">
+      Menu
+    </button>
+    <button type="button" class="btn btn-primary" (click)="toEmployee()">
+      Employee
+    </button>
+    <button type="button" class="btn btn-primary" (click)="toPromotion()">
+      Promotions
+    </button>
+    <button type="button" class="btn btn-danger" (click)="cancel()">
+      Cancel
+    </button>
+  </div>
+  <div *ngIf="menu">
+    <form [formGroup]="menuForm" (ngSubmit)="cancel()">
+      <div>
+        <label for="name">
+          First Name:
+          <input #name type="text" id="name" formControlName="name" required />
+        </label>
+      </div>
+      <div>
+        <label>
+          description:
+          <input #desc type="text" formControlName="description" required />
+        </label>
+      </div>
+      <div>
+        <label>
+          category:
+          <input #category type="text" formControlName="category" />
+        </label>
+      </div>
+      <div>
+        <label>
+          price:
+          <input #priceD type="number" formControlName="price" />
+        </label>
+      </div>
+      <div>
+        <label>
+          allergy Info:
+          <input #allergenInfo type="text" formControlName="allergenInfo" />
+        </label>
+      </div>
+
+      <div>
+        <button
+          *ngIf="!add"
+          type="button"
+          class="btn btn-success"
+          [disabled]="!menuForm.valid"
+          (click)="
+            ms.editMenuEntry(
+              placeID,
+              name.value,
+              desc.value,
+              allergenInfo.value,
+              category.value,
+              priceD.value
+            );
+            cancel()
+          "
+        >
+          Edit Item
+        </button>
+        <button
+          *ngIf="add"
+          type="button"
+          class="btn btn-success"
+          [disabled]="!menuForm.valid"
+          (click)="
+            ms.addMenuEntry(
+              name.value,
+              desc.value,
+              allergenInfo.value,
+              category.value,
+              priceD.value
+            );
+            cancel()
+          "
+        >
+          Add Item
+        </button>
+        <button type="button" class="btn btn-danger" (click)="cancel()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div *ngIf="promotion">
+    <form [formGroup]="promoForm" (ngSubmit)="cancel()">
+      <div>
+        <label for="name">
+          First Name:
+          <input #name type="text" id="name" formControlName="name" required />
+        </label>
+      </div>
+      <div>
+        <label>
+          description:
+          <input #desc type="text" formControlName="description" required />
+        </label>
+      </div>
+      <div>
+        <label>
+          category:
+          <input #category type="text" formControlName="category" />
+        </label>
+      </div>
+
+      <div>
+        <button
+          *ngIf="!add"
+          type="button"
+          class="btn btn-success"
+          [disabled]="!promoForm.valid"
+          (click)="
+            ms.editPromotion(placeID, name.value, desc.value, category.value);
+            cancel()
+          "
+        >
+          Edit Item
+        </button>
+        <button
+          *ngIf="add"
+          type="button"
+          class="btn btn-success"
+          [disabled]="!promoForm.valid"
+          (click)="
+            ms.addPromotion(name.value, desc.value, category.value); cancel()
+          "
+        >
+          Add Item
+        </button>
+        <button type="button" class="btn btn-danger" (click)="cancel()">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

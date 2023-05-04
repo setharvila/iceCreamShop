@@ -3,37 +3,36 @@
     ><img src="../assets/images/cone.png" height="45" alt="TICS Logo" /> The Ice
     Cream Shop</a
   >
+    <a class="navbar-brand" href="#"><img src="../assets/images/cone.png" height="45" alt="TICS Logo"> The Ice Cream Shop</a>
 
-  <div class="navbar px-2" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          href=""
-          (click)="displayHome = true; displayMenu = false"
-          >Home</a
-        >
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          href="#"
-          (click)="displayHome = false; displayMenu = true"
-          >Menu</a
-        >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Login</a>
-      </li>
-    </ul>
+    <div class="navbar px-2" id="navbarNav">
+      <ul class="navbar-nav">
+        
+        <li class="nav-item">
+          <a class="nav-link" href="" (click)="displayHome = true; displayMenu = false; displayManage=false">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="displayHome = false; displayMenu = true; displayManage=false">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="displayHome = false; displayMenu = false; displayManage=true">Manage</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div *ngIf="displayHome">
+    <app-home></app-home>
   </div>
-</nav>
-<div *ngIf="displayHome">
-  <app-home></app-home>
-</div>
-<div *ngIf="displayMenu">
-  <app-menu></app-menu>
-</div>
+  <div *ngIf="displayMenu">
+    <app-menu></app-menu>
+  </div>
+  <div *ngIf="displayManage">
+    <app-manage></app-manage>
+  </div>
+  
 
 <div class="footer">
   <p>&copy; 1949-2023 The Ice Cream Shop - All Rights Reserved</p>
