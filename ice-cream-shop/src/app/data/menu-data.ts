@@ -1,8 +1,10 @@
 import { menuEntry } from '../model/menuEntry';
 
+let n : number = 0;
+
 export const MENU: menuEntry[] = [
   {
-    id: 0,
+    id: n++,
     name: 'Ice Cream Sundae',
     description: 'Normal sundae served on a vanilla cone',
     category: "Cones",
@@ -10,7 +12,39 @@ export const MENU: menuEntry[] = [
     price: 2.19,
   },
   {
-    id: 1,
+    id: n++,
+    name: 'The Cream',
+    description: '3 Mega Scoops of Ice Cream served on a souvenier plate ',
+    category: "Cones",
+    allergyInfo: 'Dairy',
+    price: 10.19,
+  },
+  {
+    id: n++,
+    name: 'Strawberry Scoop',
+    description: 'Sweet Strawberry Syrup Smothered Single Scoop',
+    category: "Cones",
+    allergyInfo: 'Dairy',
+    price: 2.29,
+  },
+  {
+    id: n++,
+    name: 'Double Choccy Chocolate Chip',
+    description: 'Scoop of chocolate ice cream with a chocolate chip mix-in',
+    category: "Cones",
+    allergyInfo: 'Dairy',
+    price: 2.59,
+  },
+  {
+    id: n++,
+    name: 'Classic Blizzyz',
+    description: 'The classic, World Famous Blizzy',
+    category: "Blizzyz",
+    allergyInfo: 'Dairy',
+    price: 3.19,
+  },
+  {
+    id: n++,
     name: 'Strawberry Blizzyz',
     description: 'Strawberry twist on the classic Blizzy',
     category: "Blizzyz",
@@ -18,7 +52,31 @@ export const MENU: menuEntry[] = [
     price: 3.49,
   },
   {
-    id: 2,
+    id: n++,
+    name: 'Chocolate Blizzyz',
+    description: 'Chocolate covered classic Blizzy',
+    category: "Blizzyz",
+    allergyInfo: 'Dairy',
+    price: 3.49,
+  },
+  {
+    id: n++,
+    name: 'Cookie Dough Blizzyz',
+    description: 'Classic Blizzy with chunks of cookie dough mixed in',
+    category: "Blizzyz",
+    allergyInfo: 'Dairy',
+    price: 3.99,
+  },
+  {
+    id: n++,
+    name: 'World Famous Malt',
+    description: 'Our classic twist on delicious malts',
+    category: 'Shakes/Malts',
+    allergyInfo: 'Dairy',
+    price: 4.39,
+  },
+  {
+    id: n++,
     name: 'Chocolate Malt',
     description: 'Chocolate flavor infused in our famous malt',
     category: 'Shakes/Malts',
@@ -26,7 +84,15 @@ export const MENU: menuEntry[] = [
     price: 4.59,
   },
   {
-    id: 3,
+    id: n++,
+    name: 'Strawberry Malt',
+    description: 'Strawberry flavor infused in our famous malt',
+    category: 'Shakes/Malts',
+    allergyInfo: 'Dairy',
+    price: 4.59,
+  },
+  {
+    id: n++,
     name: 'Chocolate Chip Cookies',
     description: 'Cookies served hot and fresh',
     category: 'Sides',

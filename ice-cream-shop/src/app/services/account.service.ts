@@ -7,17 +7,17 @@ import {Account} from '../model/account';
 export class AccountService {
 
   constructor() { }
-  nextID: number;
+  nextID: number =0;
 
   ACCOUNTS: Account [] = [];
 
   getNextID(): number {
-    return ++this.nextID;
+    return this.nextID++;
   }
 
   addAccount(fname: string, lname: string, phone: number, email: string, password: string, isNewEmployee: boolean, isNewManager: boolean){
     const newAccount: Account = {
-      id: this.nextID(),
+      id: this.getNextID(),
       firstName: fname, 
       lastName: lname, 
       phone: phone,
@@ -30,7 +30,7 @@ export class AccountService {
   }
 
   editAccount(id: number, newFirstName: string, newLastName: string, newPhone: number,
-              newEmail: string, newPassword: string, isNewEmployee: boolean, isNewEmployee: boolean, isNewManager: boolean){
+              newEmail: string, newPassword: string, isNewEmployee: boolean, isNewManager: boolean){
     this.ACCOUNTS[id].firstName = newFirstName
     this.ACCOUNTS[id].lastName = newLastName;
     this.ACCOUNTS[id].phone = newPhone;

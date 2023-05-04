@@ -4,6 +4,8 @@ import { PROMOTIONS } from 'src/app/data/promotion-data';
 import { menuEntry } from 'src/app/model/menuEntry';
 import { promotion } from 'src/app/model/promotion';
 import { ManagementService } from 'src/app/services/management.service';
+import { Account } from 'src/app/model/account';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-manage',
@@ -11,18 +13,18 @@ import { ManagementService } from 'src/app/services/management.service';
   styleUrls: ['./manage.component.css'],
 })
 export class ManageComponent {
-  employee: boolean = true;
-  menu: boolean = false;
+  employee: boolean = false;
+  menu: boolean = true;
   promotion: boolean = false;
   edit: boolean = false;
   otherPage: boolean = false;
   editID: number = 0;
-   last: string = "";
+  last: string = '';
   Menu: menuEntry[] = MENU;
   Promotions: promotion[] = PROMOTIONS;
-  constructor(private MS: ManagementService) {
-    
-  }
+  //Accounts: Account[];
+
+  constructor(private MS: ManagementService) {}
 
   toMenu() {
     this.menu = true;
@@ -30,7 +32,7 @@ export class ManageComponent {
     this.promotion = false;
     this.edit = false;
     this.otherPage = false;
-    this.last = "menu";
+    this.last = 'menu';
   }
 
   toEmployee() {
@@ -39,7 +41,7 @@ export class ManageComponent {
     this.promotion = false;
     this.edit = false;
     this.otherPage = false;
-    this.last = "employee";
+    this.last = 'employee';
   }
 
   toPromotion() {
@@ -48,19 +50,18 @@ export class ManageComponent {
     this.promotion = true;
     this.edit = false;
     this.otherPage = false;
-    this.last = "promo";
+    this.last = 'promo';
   }
 
-  toEdit(){
+  toEdit() {
     this.menu = false;
     this.employee = false;
     this.promotion = false;
     this.edit = true;
     this.otherPage = true;
-    
   }
 
-  toAdd(){
+  toAdd() {
     this.menu = false;
     this.employee = false;
     this.promotion = false;
@@ -68,8 +69,8 @@ export class ManageComponent {
     this.otherPage = true;
   }
 
-  editItem(id: number){
-    this.editID=id;
+  editItem(id: number) {
+    this.editID = id;
     this.toEdit();
   }
 
