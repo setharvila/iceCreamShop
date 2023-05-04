@@ -11,11 +11,11 @@ import { ManagementService } from 'src/app/services/management.service';
   styleUrls: ['./manage.component.css'],
 })
 export class ManageComponent {
-  employee: boolean = false;
+  employee: boolean = true;
   menu: boolean = false;
   promotion: boolean = false;
   edit: boolean = false;
-  otherPage: boolean = true;
+  otherPage: boolean = false;
   editID: number = 0;
    last: string = "";
   Menu: menuEntry[] = MENU;
