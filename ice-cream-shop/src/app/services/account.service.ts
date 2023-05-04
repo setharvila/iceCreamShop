@@ -18,7 +18,7 @@ export class AccountService {
     {id: this.getNextID(), firstName: 'Penny', lastName: 'Hofstadter', phone: 7015556789, emailAddress: 'hofstadter.penny@gmail.com', 
      password: 'sheldonsucks', isEmployee: false, isManager: false},
     {id: this.getNextID(), firstName: 'Howard', lastName: 'Wolowitz', phone: 7015551233, emailAddress: 'wolowitz.howard@gmail.com',
-     password: 'sweetbernadette', isEmployee: false, isManger: false}
+     password: 'sweetbernadette', isEmployee: false, isManager: false}
   ];
   getNextID(): number {
     return this.nextID++;
