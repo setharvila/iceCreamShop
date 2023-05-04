@@ -7,14 +7,33 @@
 })
 export class CartService {
   items: Cart[] = [];
+  count: number = 1;
   
-  addItemToCart(id: number, name: string, price: number) {
+  addItemToCart(name: string, price: number) {
     const newItem: Cart = {
-      id: this.MENU.id,
       name: this.MENU.name,
       price: this.MENU.price,
     };
     this.items.push(newItem);
+  }
+
+  addMore(item: Cart){
+    updatedPrice: number = item.price;
+    updatedPrice = updatedPrice + item.price;
+    item.price = updatedPrice;
+    count++;
+  }
+
+  addLess(item: Cart){
+    if(count > 0){
+      updatedPrice: number = item.price;
+      updatedPrice = updatedPrice - item.price;
+      item.price = updatedPrice;
+      count--;
+    }
+    else{
+      this.deleteItem(item);
+    }
   }
 
   deleteItem(item: Cart) {
