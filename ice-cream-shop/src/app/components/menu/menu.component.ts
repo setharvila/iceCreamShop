@@ -7,7 +7,18 @@ import { menuEntry } from 'src/app/model/menuEntry';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
+  items: Cart[] = [];
+  menuItem: any = MENU;
 
   Menu : menuEntry[] = MENU; 
+
+  addItemToCart(name: string, price: number) {
+    const newItem: Cart = {
+      id: this.menuItem.id,
+      name: this.menuItem.name,
+      price: this.menuItem.price,
+    };
+    this.items.push(newItem);
+  }
 
 }
