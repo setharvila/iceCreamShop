@@ -1,5 +1,5 @@
   import { Injectable } from '@angular/core';
-  import { menuEntry } from '../model/menuEntry';
+  import { MENU } from '../data/menu-data';
   import { Cart } from '../model/cartEntry';
 
 @Injectable({
@@ -10,9 +10,9 @@ export class CartService {
   
   addItemToCart(id: number, name: string, price: number) {
     const newItem: Cart = {
-      id: this.menu.id,
-      name: this.menu.name,
-      price: this.menu.price,
+      id: this.MENU.id,
+      name: this.MENU.name,
+      price: this.MENU.price,
     };
     this.items.push(newItem);
   }
