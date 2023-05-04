@@ -8,9 +8,12 @@
 export class CartService {
   items: Cart[] = [];
   count: number = 1;
+  MENU: any = MENU;
+  updatedPrice: number = 0;
   
   addItemToCart(name: string, price: number) {
     const newItem: Cart = {
+      id: this.MENU.id,
       name: this.MENU.name,
       price: this.MENU.price,
     };
@@ -18,18 +21,18 @@ export class CartService {
   }
 
   addMore(item: Cart){
-    updatedPrice: number = item.price;
-    updatedPrice = updatedPrice + item.price;
-    item.price = updatedPrice;
-    count++;
+    this.updatedPrice = item.price;
+    this.updatedPrice = this.updatedPrice + item.price;
+    item.price = this.updatedPrice;
+    this.count++;
   }
 
   addLess(item: Cart){
-    if(count > 0){
-      updatedPrice: number = item.price;
-      updatedPrice = updatedPrice - item.price;
-      item.price = updatedPrice;
-      count--;
+    if(this.count > 0){
+      this.updatedPrice = item.price;
+      this.updatedPrice = this.updatedPrice - item.price;
+      item.price = this.updatedPrice;
+      this.count--;
     }
     else{
       this.deleteItem(item);
