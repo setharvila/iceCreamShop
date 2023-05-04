@@ -12,10 +12,10 @@ import { ManagementService } from 'src/app/services/management.service';
 })
 export class ManageComponent {
   employee: boolean = false;
-  menu: boolean = true;
+  menu: boolean = false;
   promotion: boolean = false;
   edit: boolean = false;
-  otherPage: boolean = false;
+  otherPage: boolean = true;
   editID: number = 0;
    last: string = "";
   Menu: menuEntry[] = MENU;
