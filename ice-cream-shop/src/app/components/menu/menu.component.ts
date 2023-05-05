@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MENU } from 'src/app/data/menu-data';
 import { menuEntry } from 'src/app/model/menuEntry';
+import { Cart } from 'src/app/model/cartEntry';
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',

@@ -1,1 +1,40 @@
-<h1>Cart</h1>
+<div class="container">
+  <hr />
+  <div class="card" *ngFor="let item of items">
+    <div class="card-header">
+      <h4>{{ item.name }}</h4>
+    </div>
+    <div class="card-body">
+      <ul>
+        {{
+          item.price
+        }}
+      </ul>
+      <div class="form-group">
+        <!-- <button class="btn btn-primary" (click)="addMore(contact)"> -->
+        <button class="btn btn-primary">
+          <b><u>+</u></b>
+        </button>
+        <!-- <button class="btn btn-primary" (click)="addLess(contact)"> -->
+        <button class="btn btn-primary">
+          <b><u>-</u></b>
+        </button>
+        <!-- <button class="btn btn-primary" (click)="deleteItem(contact)"> -->
+        <button class="btn btn-primary">
+          <b><u>Delete</u></b>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div>
+    <h5>Checkout</h5>
+    <ul>
+      Total price : {{
+      <!-- totalPrice() -->
+      }}
+    </ul>
+    <button class="btn btn-primary">
+      <b><u>Place Order</u></b>
+    </button>
+  </div>
+</div>

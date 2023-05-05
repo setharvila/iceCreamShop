@@ -80,15 +80,15 @@ export class AccountService {
 
 
   checkLogin(email: string, password: string): boolean {
-    const tempID: number = 0;
-    for(let i=0; i < this.accountService.ACCOUNTS.length; i++)
+    var tempID: number = 0;
+    for(let i=0; i < this.ACCOUNTS.length; i++)
     {
-      if(email == this.accountService.ACCOUNTS[i].emailAddress)
+      if(email == this.ACCOUNTS[i].emailAddress)
       {
         tempID = i;
       }
     }
-    if(password == this.accountService.ACCOUNTS[tempID].password)
+    if(password == this.ACCOUNTS[tempID].password)
     {
       return true;
     }

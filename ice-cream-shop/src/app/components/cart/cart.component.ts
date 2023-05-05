@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Cart } from '../model/cartEntry';
-import { MENU } from '../data/menu-data';
-import { CartService } from '../services/cart.service';
-import { Cart } from 
+import { Cart } from '../../model/cartEntry';
+import { MENU } from '../../data/menu-data';
+import { CartService } from '../../services/cart.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -23,11 +23,20 @@ export class CartComponent implements OnInit{
 
   addItemToCart(name: string, price: number) {
     const newItem: Cart = {
-      id: this.MENU.id,
-      name: this.MENU.name,
-      price: this.MENU.price,
+      id: this.menuItem.id,
+      name: this.menuItem.name,
+      price: this.menuItem.price,
     };
     this.cartservice.addToCart(newItem);
+  }
+
+  priceTotal(): number{
+    var i = 0;
+    var total = 0;
+    for(i = 0; i > this.items.length; i++){
+      total = total + this.items[i].price;
+    }
+    return total;
   }
   
   addMore(item: Cart){

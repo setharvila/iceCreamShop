@@ -1,4 +1,8 @@
-<app-login-bar (newItemEvent)="displayPortal()"></app-login-bar>
+<app-login-bar
+  (newItemEvent)="displayPortal()"
+  (goToLoginEvent)="displayLoginPage()"
+  (goToCartEvent)="displayCartPage()"
+></app-login-bar>
 <nav class="navbar navbar-expand navbar-light bg-light px-5">
   <a class="navbar-brand" href="#"
     ><img src="../assets/images/cone.png" height="45" alt="TICS Logo" /> The Ice
@@ -38,6 +42,12 @@
 </div>
 <div *ngIf="displayManage">
   <app-manage></app-manage>
+</div>
+<div *ngIf="displayLogin">
+  <app-login></app-login>
+</div>
+<div *ngIf="displayCart">
+  <app-cart></app-cart>
 </div>
 
 <div class="footer">

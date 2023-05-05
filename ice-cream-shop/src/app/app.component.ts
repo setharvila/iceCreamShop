@@ -10,11 +10,28 @@ export class AppComponent {
   displayHome: boolean = true;
   displayMenu: boolean = false;
   displayManage: boolean = false;
+  displayLogin: boolean = false;
+  displayCart: boolean = false;
 
 
   displayPortal(){
     this.displayManage = true;
     this.displayHome = false;
     this.displayMenu = false;
+  }
+
+  displayLoginPage(){
+    this.displayManage = false;
+    this.displayHome = false;
+    this.displayMenu = false;
+    this.displayLogin = true;
+  }
+
+  displayCartPage(){
+    this.displayCart = true;
+    this.displayManage = false;
+    this.displayHome = false;
+    this.displayMenu = false;
+    this.displayLogin = false;
   }
 }

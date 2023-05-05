@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service'; 
-import {Account} from 'src/app/model';
+import { Account } from 'src/app/model/account';
 
 @Component({
   selector: 'app-login',
@@ -23,16 +23,17 @@ export class LoginComponent {
   isEmployee: boolean = false;
   isManager: boolean = false;
 
-  addNewAccount(){
-    this.accountService.addAccount(this.id, this.firstName, this.lastName, this.phone, this.emailAddress, this.password, this.isEmployee, this.isManager);
+  addNewAccount(firstName: string, lastName: string, phone: string, email: string, password: string, employee: string, manager: string){
+
+    this.accountService.addAccount(firstName, lastName, Number(phone), email, password, Boolean(employee), Boolean(manager));                           
   }
 
   removeAccount(){
     this.accountService.deleteAccount(this.id);
   }
 
-  canLogin(){
-    this.accountService.checkLogin(this.inputEmail, this.inputPassword);
+  canLogin(email: string, password: string){
+    this.accountService.checkLogin(email, password);
   }
 
 }
