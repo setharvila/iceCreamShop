@@ -9,7 +9,7 @@
     </div>
 
     <div class="user" *ngIf="isCustomer">
-      <p>Hi,<a href="#">John Doe</a>!</p>
+      <p>Hi!<a href="#" (click)="goToCartEventFunc()">View Cart</a></p>
     </div>
 
     <div class="employee" *ngIf="isEmployee">
