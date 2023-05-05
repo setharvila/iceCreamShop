@@ -26,6 +26,12 @@ export class LoginBarComponent {
     this.goToLoginEvent.emit("GoToLoginClicked");
   }
 
+  @Output() goToCartEvent = new EventEmitter<string>();
+
+  goToCartEventFunc(){
+    this.goToCartEvent.emit("goToCartClicked");
+  }
+
 }
 
 

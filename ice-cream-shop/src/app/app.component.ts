@@ -11,6 +11,7 @@ export class AppComponent {
   displayMenu: boolean = false;
   displayManage: boolean = false;
   displayLogin: boolean = false;
+  displayCart: boolean = false;
 
 
   displayPortal(){
@@ -24,5 +25,13 @@ export class AppComponent {
     this.displayHome = false;
     this.displayMenu = false;
     this.displayLogin = true;
+  }
+
+  displayCartPage(){
+    this.displayCart = true;
+    this.displayManage = false;
+    this.displayHome = false;
+    this.displayMenu = false;
+    this.displayLogin = false;
   }
 }
