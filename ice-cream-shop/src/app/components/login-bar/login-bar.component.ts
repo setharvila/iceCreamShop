@@ -17,7 +17,13 @@ export class LoginBarComponent {
   @Output() newItemEvent = new EventEmitter<string>();
 
   goToPortal(){
-    this.newItemEvent.emit("GoToPortalClicked")
+    this.newItemEvent.emit("GoToPortalClicked");
+  }
+
+  @Output() goToLoginEvent = new EventEmitter<string>();
+
+  goToLoginEventFunc(){
+    this.goToLoginEvent.emit("GoToLoginClicked");
   }
 
 }
