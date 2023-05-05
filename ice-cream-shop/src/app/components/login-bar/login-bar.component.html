@@ -5,7 +5,7 @@
 
   <div class="right-align">
     <div class="notLoggedIn" *ngIf="isNotLoggedIn">
-      <p>You're not<a href="#">Signed In</a></p>
+      <p>You're not<a href="#" (click)="goToLoginEventFunc()">Signed In</a></p>
     </div>
 
     <div class="user" *ngIf="isCustomer">
