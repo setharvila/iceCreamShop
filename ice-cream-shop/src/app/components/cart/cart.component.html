@@ -13,7 +13,9 @@
         </div>
       </div>
     </div>
-    <div class="container mt-3">
-      <router-outlet></router-outlet>
+    <div>
+      <h5>Checkout</h5>
+      <ul>Total price : {{ totalPrice() }}</ul>
+      <button class="btn btn-primary" (click)="nothing"><b><u>Place Order</u></b></button>
     </div>
-  </div>
+</div>
