@@ -1,1 +1,45 @@
-<p>login works!</p>
+<h1>Login</h1>
+<div class=container>
+    <div class="card">
+        <div class="card-body">
+            <input type="email" class="form-control" [(ngModel)]="inputEmail" placeholder="Email">
+            <input type="text" class="form-control" [(ngModel)]="inputPassword" placeholder="Password">
+        </div>
+        <button class="btn" (click)="canLogin">
+            Login
+        </button>
+    </div>
+</div>
+
+
+
+<h1>New Account</h1>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="firstName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="lastName" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" [(ngModel)]="phone" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="emailAddress" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" [(ngModel)]="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" name="isEmployee" value="isEmployee">Employee</label>
+                <label><input type="checkbox" name="isManager" value="isManager">Manager</label>
+            </div>
+            <button class="btn" (click)="addNewAccount()">
+                Create Account             
+            </button>
+        </div>
+    </div>
+</div>
+
