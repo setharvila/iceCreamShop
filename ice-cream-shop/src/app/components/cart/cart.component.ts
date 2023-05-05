@@ -29,6 +29,15 @@ export class CartComponent implements OnInit{
     };
     this.cartservice.addToCart(newItem);
   }
+
+  priceTotal(): number{
+    i: number;
+    total: number = 0;
+    for(i = 0; i > this.items.length; i++){
+      total = total + this.items[i].price;
+    }
+    return this.total;
+  }
   
   addMore(item: Cart){
     this.updatedPrice = item.price;
