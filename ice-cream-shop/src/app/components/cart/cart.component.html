@@ -1,1 +1,19 @@
-<h1>Cart</h1>
+<div class="container">
+    <hr />
+    <div class="card" *ngFor="let item of items">
+      <div class="card-header">
+        <h4>{{ item.name }}</h4>
+      </div>
+      <div class="card-body">
+        <ul>{{ item.price }}</ul>
+        <div class="form-group">
+            <button class="btn btn-primary" (click)="addMore(contact)"><b><u>+</u></b></button>
+            <button class="btn btn-primary" (click)="addLess(contact)"><b><u>-</u></b></button>
+            <button class="btn btn-primary" (click)="deleteItem(contact)"><b><u>Delete</u></b></button>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
