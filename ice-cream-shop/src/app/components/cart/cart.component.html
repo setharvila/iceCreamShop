@@ -11,16 +11,13 @@
         }}
       </ul>
       <div class="form-group">
-        <!-- <button class="btn btn-primary" (click)="addMore(contact)"> -->
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" (click)="addMore(item)">
           <b><u>+</u></b>
         </button>
-        <!-- <button class="btn btn-primary" (click)="addLess(contact)"> -->
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" (click)="addLess(item)">
           <b><u>-</u></b>
         </button>
-        <!-- <button class="btn btn-primary" (click)="deleteItem(contact)"> -->
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" (click)="deleteItem(item)">
           <b><u>Delete</u></b>
         </button>
       </div>
@@ -29,9 +26,7 @@
   <div>
     <h5>Checkout</h5>
     <ul>
-      Total price : {{
-      <!-- totalPrice() -->
-      }}
+      Total price : <p>b: {{ b(totalPrice()) }}</p> 
     </ul>
     <button class="btn btn-primary">
       <b><u>Place Order</u></b>
