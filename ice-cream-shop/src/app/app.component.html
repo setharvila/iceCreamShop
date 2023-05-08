@@ -33,7 +33,7 @@
   <app-login></app-login>
 </div>
 <div *ngIf="displayCart">
-  <app-cart></app-cart>
+  <app-cart (checkoutEvent)="displayHomePage()"></app-cart>
 </div>
 
 <div class="footer">
