@@ -12,7 +12,6 @@ import { CartService } from '../../services/cart.service';
 export class CartComponent implements OnInit{
   items: Cart[] = [];
   count: number = 1;
-  menuItem: any = MENU;
   updatedPrice: number = 0;
 
   constructor(private cartservice: CartService) {}
@@ -21,11 +20,11 @@ export class CartComponent implements OnInit{
     this.items = this.cartservice.items;
   }
 
-  addItemToCart(name: string, price: number) {
+  addItemToCart(menuItem: any = MENU) {
     const newItem: Cart = {
-      id: this.menuItem.id,
-      name: this.menuItem.name,
-      price: this.menuItem.price,
+      id: menuItem.id,
+      name: menuItem.name,
+      price: menuItem.price,
     };
     this.cartservice.addToCart(newItem);
   }
