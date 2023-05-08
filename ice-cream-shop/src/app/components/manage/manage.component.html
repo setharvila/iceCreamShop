@@ -40,12 +40,22 @@
 <!-- Employee Settings -->
 <div *ngIf="employee">
   <!--these next for loop runs through menu, since there is no account array-->
-  <div class="card" *ngFor="let item of Menu">
-    <h2>{{ item.name }} ${{ item.price }}</h2>
-    CATEGORY: {{ item.category }}
+  <div class="card" *ngFor="let item of Accounts">
+    <h2>{{ item.firstName }} {{ item.lastName }}</h2>
+    <h6>Email: {{ item.emailAddress }}
+    Phone: {{ item.phone }}
+    </h6>
+    <p>Employee Status: {{ item.isEmployee }}</p>
+    <p>Manager Status: {{ item.isManager }}</p>
 
-    <h6>{{ item.description }}</h6>
-    <p>Contains: {{ item.allergyInfo }}</p>
+    <div>
+      <button type="button" class="btn-white-fill" (click)="editItem(item.id)">
+        Edit
+      </button>
+      <button type="button" class="btn-pink-fill" (click)="delete(item.id)">
+        Delete
+      </button>
+    </div>
   </div>
 </div>
 
