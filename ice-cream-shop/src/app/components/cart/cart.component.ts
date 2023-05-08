@@ -11,8 +11,6 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartComponent implements OnInit{
   items: Cart[] = [];
-  count: number = 1;
-  menuItem: any = MENU;
   updatedPrice: number = 0;
 
   constructor(private cartservice: CartService) {}
@@ -21,11 +19,11 @@ export class CartComponent implements OnInit{
     this.items = this.cartservice.items;
   }
 
-  addItemToCart(name: string, price: number) {
+  addItemToCart(menuItem: any = MENU) {
     const newItem: Cart = {
-      id: this.menuItem.id,
-      name: this.menuItem.name,
-      price: this.menuItem.price,
+      name: menuItem.name,
+      price: menuItem.price,
+      count: 1,
     };
     this.cartservice.addToCart(newItem);
   }
@@ -43,15 +41,15 @@ export class CartComponent implements OnInit{
     this.updatedPrice = item.price;
     this.updatedPrice = this.updatedPrice + item.price;
     item.price = this.updatedPrice;
-    this.count++;
+    item.count++;
   }
 
   addLess(item: Cart){
-    if(this.count > 0){
+    if(item.count > 0){
       this.updatedPrice = item.price;
       this.updatedPrice = this.updatedPrice - item.price;
       item.price = this.updatedPrice;
-      this.count--;
+      item.count--;
     }
     else{
       this.deleteItem(item);
@@ -62,5 +60,4 @@ export class CartComponent implements OnInit{
     const index = this.items.indexOf(item);
     if (index >= 0) this.items.splice(index, 1);
   } 
-
 }

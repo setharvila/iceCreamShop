@@ -1,0 +1,27 @@
+.btn-primary {
+    color: #fff5fa;
+    background-color: #e0698a;
+    border: none;
+    border-radius: 15px;
+    font-family: area-normal, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: small;
+    padding: 5px 10px;
+    margin-left: 35px;
+  }
+  .card {
+    margin: 5px;
+    background-color: white;
+    border-radius: 10px;
+    max-width: 1000px;
+  }
+  .card-header {
+    background-color: #9d3d58;
+    padding: 3px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .form-group{
+    padding: 10px;
+    margin-left: 27px;
+  }

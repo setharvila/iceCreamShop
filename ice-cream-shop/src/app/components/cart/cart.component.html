@@ -1,36 +1,33 @@
 <div class="container">
-  <hr />
+  <h1>Items in Cart : </h1>
   <div class="card" *ngFor="let item of items">
     <div class="card-header">
       <h4>{{ item.name }}</h4>
     </div>
     <div class="card-body">
-      <ul>
-        {{
-          item.price
-        }}
-      </ul>
+      <ul>{{ item.price }}</ul>
       <div class="form-group">
+        <ul>{{ item.count }}</ul>
         <button class="btn btn-primary" (click)="addMore(item)">
-          <b><u>+</u></b>
+          <b>+</b>
         </button>
         <button class="btn btn-primary" (click)="addLess(item)">
-          <b><u>-</u></b>
+          <b>-</b>
         </button>
         <button class="btn btn-primary" (click)="deleteItem(item)">
-          <b><u>Delete</u></b>
+          <b>Delete</b>
         </button>
       </div>
     </div>
   </div>
+  <hr />
   <div>
     <h5>Checkout</h5>
     <ul>
-      Total price :
-      <p>b: {{ priceTotal() }}</p>
+      Total price : {{ priceTotal() }}
     </ul>
     <button class="btn btn-primary">
-      <b><u>Place Order</u></b>
+      <b>Place Order</b>
     </button>
   </div>
 </div>

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { MENU } from 'src/app/data/menu-data';
 import { menuEntry } from 'src/app/model/menuEntry';
 import { Cart } from 'src/app/model/cartEntry';
+import { CartService } from '../../services/cart.service';
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -10,16 +12,11 @@ import { Cart } from 'src/app/model/cartEntry';
 export class MenuComponent {
   items: Cart[] = [];
   menuItem: any = MENU;
-
   Menu : menuEntry[] = MENU; 
+  constructor(private cartservice: CartService) {}
 
-  addItemToCart(name: string, price: number) {
-    const newItem: Cart = {
-      id: this.menuItem.id,
-      name: this.menuItem.name,
-      price: this.menuItem.price,
-    };
-    this.items.push(newItem);
+  addItemToCart() {
+    this.cartservice.addToCart(this.menuItem);
   }
 
 }
