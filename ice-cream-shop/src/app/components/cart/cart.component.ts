@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Cart } from '../../model/cartEntry';
 import { CartService } from '../../services/cart.service';
 
@@ -11,6 +11,12 @@ import { CartService } from '../../services/cart.service';
 export class CartComponent implements OnInit{
   items: Cart[] = [];
   updatedPrice: number = 0;
+
+  @Output() checkoutEvent = new EventEmitter<string>();
+
+  goHome(){
+    this.checkoutEvent.emit("GoHome")
+  }
 
   constructor(private cartservice: CartService) {}
 
@@ -48,4 +54,8 @@ export class CartComponent implements OnInit{
     const index = this.items.indexOf(item);
     if (index >= 0) this.items.splice(index, 1);
   } 
+
+  clearCart(){
+    this.items = [];
+  }
 }
