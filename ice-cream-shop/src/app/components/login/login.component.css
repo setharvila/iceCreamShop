@@ -1,0 +1,28 @@
+.body-content {
+  text-align: center;
+  background-color: whitesmoke;
+  background-image: url("../../../assets/images/bgImg.png");
+  background-size: cover;
+  background-repeat: repeat;
+  padding: 100px;
+}
+
+h1 {
+  font-family: brevia, sans-serif;
+  font-weight: 700;
+  text-align: start;
+  font-size: larger;
+}
+
+.newAcct,
+.login {
+  margin: 25px 25%;
+  padding: 25px;
+  border-radius: 15px;
+  background-color: #fff5fa;
+  border: lightgray 1px solid;
+}
+
+input {
+  margin: 10px;
+}
