@@ -22,9 +22,9 @@ export class ManageComponent {
   last: string = '';
   Menu: menuEntry[] = MENU;
   Promotions: promotion[] = PROMOTIONS;
-  //Accounts: Account[];
+  Accounts: Account[] = this.AS.ACCOUNTS;
 
-  constructor(private MS: ManagementService) {}
+  constructor(private MS: ManagementService,private AS: AccountService) {}
 
   toMenu() {
     this.menu = true;
