@@ -21,7 +21,6 @@ export class CartComponent implements OnInit{
 
   addItemToCart(menuItem: any = MENU) {
     const newItem: Cart = {
-      id: menuItem.id,
       name: menuItem.name,
       price: menuItem.price,
       count: 1,
