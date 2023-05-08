@@ -1,0 +1,30 @@
+* {
+  font-family: area-normal, sans-serif;
+  font-size: x-small;
+  padding: 1px 15px;
+  margin: 0;
+}
+
+a {
+  color: white;
+  padding: 0 0 0 5px;
+}
+
+a:hover {
+  color: #eac2cd;
+}
+
+.mainBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e0698a;
+  color: white;
+}
+
+.right-align {
+  text-align: end;
+}
+
+.right-align a {
+  padding: 0 25px 0 0;
+}

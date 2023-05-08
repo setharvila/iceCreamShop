@@ -1,0 +1,74 @@
+<!-- Management Menu -->
+<div class="manage-menu">
+  <h1>Management Interface</h1>
+  <div class="manage-menu-buttons">
+    <button type="button" class="btn-white-fill" (click)="toMenu()">
+      Menu
+    </button>
+    <button type="button" class="btn-white-fill" (click)="toEmployee()">
+      Employee
+    </button>
+    <button type="button" class="btn-white-fill" (click)="toPromotion()">
+      Promotions
+    </button>
+    <button type="button" class="btn-white-fill" (click)="toAdd()">
+      Add Data
+    </button>
+  </div>
+</div>
+
+<!-- Menu Settings -->
+<div *ngIf="menu">
+  <div class="card" *ngFor="let item of Menu">
+    <h2 id="item-name">{{ item.name }}</h2>
+    <p id="item-price">Price ${{ item.price }}</p>
+    <p>Category: {{ item.category }}</p>
+    <p>Description: {{ item.description }}</p>
+    <p>Allergen Info: {{ item.allergyInfo }}</p>
+    <!-- Item Controls -->
+    <div>
+      <button type="button" class="btn-white-fill" (click)="editItem(item.id)">
+        Edit
+      </button>
+      <button type="button" class="btn-pink-fill" (click)="delete(item.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Employee Settings -->
+<div *ngIf="employee">
+  <!--these next for loop runs through menu, since there is no account array-->
+  <div class="card" *ngFor="let item of Menu">
+    <h2>{{ item.name }} ${{ item.price }}</h2>
+    CATEGORY: {{ item.category }}
+
+    <h6>{{ item.description }}</h6>
+    <p>Contains: {{ item.allergyInfo }}</p>
+  </div>
+</div>
+
+<!-- Promotion Settings -->
+<div *ngIf="promotion">
+  <div class="card" *ngFor="let item of Promotions">
+    <h2>{{ item.name }}</h2>
+    <p>Applies to: {{ item.category }}</p>
+
+    <p>{{ item.description }}</p>
+
+    <div>
+      <button type="button" class="btn-white-fill" (click)="editItem(item.id)">
+        Edit
+      </button>
+      <button type="button" class="btn-pink-fill" (click)="delete(item.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Add Item Settings -->
+<div *ngIf="otherPage">
+  <app-edit></app-edit>
+</div>

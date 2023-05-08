@@ -1,0 +1,49 @@
+
+.manage-menu {
+  background-color: #5e6d8c;
+  text-align: center;
+}
+
+.manage-menu h1 {
+  color: white;
+  font-size: medium;
+  padding: 20px 0 10px 0;
+  margin: 0;
+  line-height: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.manage-menu-buttons {
+  padding: 10px;
+
+  display: flex;
+  justify-content: center;
+}
+.manage-menu-buttons button {
+  margin: 0 10px;
+}
+
+.card {
+  margin: 15px 50px;
+  padding: 20px;
+  background-color: #fff5fa;
+}
+
+.card h2 {
+  color: #5e6d8c;
+  font-family: brevia, sans-serif;
+  font-weight: bold;
+  font-size: medium;
+}
+
+p {
+  font-family: area-normal, sans-serif;
+  font-size: small;
+  line-height: 0;
+  padding: 3px 0;
+}
+
+.card button {
+  margin-right: 10px;
+}
