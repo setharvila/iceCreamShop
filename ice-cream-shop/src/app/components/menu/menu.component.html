@@ -10,25 +10,19 @@
     </p>
   </div>
 
-
-  <div *ngFor = "let item of Menu" class="menuCard">
-    <h3>{{item.name}}</h3>
+  <div *ngFor="let item of Menu" class="menuCard">
+    <h3>{{ item.name }}</h3>
     <h4>Description</h4>
     <p>
-      {{item.description}}
+      {{ item.description }}
     </p>
     <h4>Allergy Info</h4>
-    <p>{{item.allergyInfo}}</p>
+    <p>{{ item.allergyInfo }}</p>
     <h4>Price:</h4>
-    <p>{{item.price}}</p>
+    <p>{{ item.price }}</p>
 
-    <input
-      type="number"
-      value="1"
-      class="form-control form-control-sm"
-      id="cartQty"
-    />
-
-    <button class="btn-pink-fill">Add to Cart</button>
+    <button class="btn-pink-fill" (click)="addItemToCart(item)">
+      <b>Add to Cart</b>
+    </button>
   </div>
 </div>

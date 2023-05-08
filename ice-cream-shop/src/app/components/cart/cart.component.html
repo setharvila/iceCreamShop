@@ -1,1 +1,17 @@
-<h1>Cart</h1>
+<div class="body-content">
+  <h1>Shopping Cart</h1>
+
+  <div class="item-card" *ngFor="let item of items">
+    <h4>{{ item.name }}</h4>
+    <p>Price: {{ item.price | currency }}</p>
+    <p>Qty: {{ item.count }}</p>
+    <button class="btn-pink-fill" (click)="addMore(item)">+</button>
+    <button class="btn-pink-fill" (click)="addLess(item)">-</button>
+    <button class="btn-pink-fill" (click)="deleteItem(item)">Delete</button>
+  </div>
+
+  <div class="checkout">
+    <p>Total price: {{ priceTotal() | currency }}</p>
+    <button class="btn-pink-fill" (click)="goHome()">Place Order</button>
+  </div>
+</div>

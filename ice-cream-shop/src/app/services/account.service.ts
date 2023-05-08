@@ -78,5 +78,25 @@ export class AccountService {
     }
   }
 
+
+  checkLogin(email: string, password: string): boolean {
+    var tempID: number = 0;
+    for(let i=0; i < this.ACCOUNTS.length; i++)
+    {
+      if(email == this.ACCOUNTS[i].emailAddress)
+      {
+        tempID = i;
+      }
+    }
+    if(password == this.ACCOUNTS[tempID].password)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+
 }
 
