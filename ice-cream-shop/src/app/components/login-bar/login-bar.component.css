@@ -24,3 +24,7 @@ a:hover {
 .right-align {
   text-align: end;
 }
+
+.right-align a {
+  padding: 0 25px 0 0;
+}
