@@ -11,12 +11,16 @@ import { CartService } from '../../services/cart.service';
 })
 export class MenuComponent {
   items: Cart[] = [];
-  menuItem: any = MENU;
   Menu : menuEntry[] = MENU; 
   constructor(private cartservice: CartService) {}
 
-  addItemToCart() {
-    this.cartservice.addToCart(this.menuItem);
+  addItemToCart(menuItem: any = MENU) {
+    const newItem: Cart = {
+      name: menuItem.name,
+      price: menuItem.price,
+      originalPrice: menuItem.price,
+      count: 1,
+    };
+    this.cartservice.addToCart(newItem);
   }
-
 }
