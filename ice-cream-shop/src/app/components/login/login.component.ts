@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service'; 
 import { Account } from 'src/app/model/account';
 
@@ -8,6 +8,12 @@ import { Account } from 'src/app/model/account';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  @Output() checkoutEvent = new EventEmitter<string>();
+
+  goHome(){
+    this.checkoutEvent.emit("GoHome")
+  }
+
 
   constructor(private accountService: AccountService){}
 
