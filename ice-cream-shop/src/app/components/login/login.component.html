@@ -20,7 +20,7 @@
     </div>
     <button
       class="btn-pink-fill"
-      (click)="canLogin(emailInput.value, passwordInput.value)"
+      (click)="canLogin(emailInput.value, passwordInput.value); goHome()"
     >
       Login
     </button>
@@ -98,7 +98,8 @@
           password.value,
           employee.value,
           manager.value
-        )
+        );
+        goHome()
       "
     >
       Create Account
