@@ -11,7 +11,6 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartComponent implements OnInit{
   items: Cart[] = [];
-  count: number = 1;
   updatedPrice: number = 0;
 
   constructor(private cartservice: CartService) {}
@@ -25,6 +24,7 @@ export class CartComponent implements OnInit{
       id: menuItem.id,
       name: menuItem.name,
       price: menuItem.price,
+      count: 1,
     };
     this.cartservice.addToCart(newItem);
   }
@@ -42,15 +42,15 @@ export class CartComponent implements OnInit{
     this.updatedPrice = item.price;
     this.updatedPrice = this.updatedPrice + item.price;
     item.price = this.updatedPrice;
-    this.count++;
+    item.count++;
   }
 
   addLess(item: Cart){
-    if(this.count > 0){
+    if(item.count > 0){
       this.updatedPrice = item.price;
       this.updatedPrice = this.updatedPrice - item.price;
       item.price = this.updatedPrice;
-      this.count--;
+      item.count--;
     }
     else{
       this.deleteItem(item);
