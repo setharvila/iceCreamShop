@@ -9,7 +9,7 @@ export class HomeComponent {
 
   @Output() newItemEvent = new EventEmitter<string>();
 
-  goToPortal(){
+  goToMenu(){
     this.newItemEvent.emit("GoToMenu")
   }
 

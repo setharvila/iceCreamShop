@@ -13,14 +13,32 @@ export class AppComponent {
   displayLogin: boolean = false;
   displayCart: boolean = false;
 
+  displayHomePage(){
+    this.displayCart = false;
+    this.displayManage = false;
+    this.displayHome = true;
+    this.displayMenu = false;
+    this.displayLogin = false;
+  }
+
+  displayMenuPage(){
+    this.displayCart = false;
+    this.displayManage = false;
+    this.displayHome = false;
+    this.displayMenu = true;
+    this.displayLogin = false;
+  }
 
   displayPortal(){
+    this.displayCart = false;
     this.displayManage = true;
     this.displayHome = false;
     this.displayMenu = false;
+    this.displayLogin = false;
   }
 
   displayLoginPage(){
+    this.displayCart = false;
     this.displayManage = false;
     this.displayHome = false;
     this.displayMenu = false;

@@ -4,6 +4,12 @@
   </div>
 
   <div class="right-align">
+    <a href="#" (click)="goToLoginEventFunc()">Log In</a>
+    <a href="#" (click)="goToPortal()">Employee Portal</a>
+    <a href="#" (click)="goToCartEventFunc()">View Cart</a>
+  </div>
+
+  <!-- <div class="right-align">
     <div class="notLoggedIn" *ngIf="isNotLoggedIn">
       <p>You're not<a href="#" (click)="goToLoginEventFunc()">Signed In</a></p>
     </div>
@@ -15,5 +21,5 @@
     <div class="employee" *ngIf="isEmployee">
       <p>Hi, Employee Name!<a href="#" (click)="goToPortal()">Portal</a></p>
     </div>
-  </div>
+  </div> -->
 </div>
