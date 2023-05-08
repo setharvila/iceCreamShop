@@ -10,4 +10,9 @@ items: Cart[] = [];
 addToCart(newItem: Cart){
   this.items.push(newItem);
 }
+
+clearCart(){
+  this.items = [];
+}
+
 }
