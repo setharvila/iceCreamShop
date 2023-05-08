@@ -127,6 +127,141 @@
     </form>
   </div>
 
+<!-- Add Employee Items Menu -->
+<div *ngIf="employee">
+  <form [formGroup]="employeeForm" (ngSubmit)="cancel()">
+    <div>
+      <label for="name">
+        First Name:
+        <input
+          #name
+          type="text"
+          id="name"
+          formControlName="firstName"
+          required
+          class="form-control form-control-sm"
+        />
+      </label>
+    </div>
+    <div>
+      <label for="lname">
+        Last Name:
+        <input
+          #lname
+          type="text"
+          id="lname"
+          formControlName="lastName"
+          required
+          class="form-control form-control-sm"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Email Address:
+        <input
+          #email
+          type="text"
+          formControlName="email"
+          required
+          class="form-control form-control-sm"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Password:
+        <input
+          #password
+          type="password"
+          formControlName="password"
+          class="form-control form-control-sm"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Phone:
+        <input
+          #phone
+          type="number"
+          formControlName="phone"
+          class="form-control form-control-sm"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Employee Status:
+        <input
+          #isEmp
+          type="checkbox"
+          formControlName ='isEmployee'
+          class="form-control form-control-sm"
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Manager Status:
+        <input
+          #isMan
+          type="checkbox"
+          formControlName ='isManager'
+          class="form-control form-control-sm"
+        />
+      </label>
+    </div>
+
+    <div>
+      <button
+        *ngIf="!add"
+        type="button"
+        class="btn btn-success"
+        [disabled]="!employeeForm.valid"
+        (click)="
+          AS.editAccount(
+            placeID,
+            name.value,
+            lname.value,
+            phone.valueAsNumber,
+            email.value,
+            password.value,
+            isEmp.checked,
+            isMan.checked
+          );
+          cancel()
+        "
+      >
+        Edit Item
+      </button>
+      <button
+        *ngIf="add"
+        type="button"
+        class="btn-white-fill"
+        [disabled]="!menuForm.valid"
+        (click)="
+          AS.addAccount(
+            name.value,
+            lname.value,
+            phone.valueAsNumber,
+            email.value,
+            password.value,
+            isEmp.checked,
+            isMan.checked
+          );
+          cancel()
+        "
+      >
+        Add Item
+      </button>
+      <button type="button" class="btn-pink-fill" (click)="cancel()">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>
+
   <!-- Add Promotions Menu -->
   <div *ngIf="promotion">
     <form [formGroup]="promoForm" (ngSubmit)="cancel()">

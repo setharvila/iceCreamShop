@@ -4,7 +4,7 @@ import { MENU } from '../data/menu-data';
 import { menuEntry } from '../model/menuEntry';
 import { promotion } from '../model/promotion';
 import { PROMOTIONS } from '../data/promotion-data';
-
+import { AccountService } from './account.service';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,12 +18,12 @@ import { PROMOTIONS } from '../data/promotion-data';
 
 export class ManagementService {
 
-  constructor() { }
+  constructor(private AS: AccountService) { }
 
   menuId = MENU.length;
   promoId = PROMOTIONS.length;
   //change below to accounts when created
-  id = MENU.length;
+  id = this.AS.ACCOUNTS.length;
 
   addMenuEntry(name:string,description:string,allergyInfo:string,category:string,price: string){
     let pricen : number = Number.parseFloat(price)
@@ -74,23 +74,26 @@ export class ManagementService {
   }
 
   deleteEmployee(index: number){
-    MENU.splice(index,1)
+     
+    this.AS.ACCOUNTS.splice(index,1)
     this.id--;
-    for(let i = 0; i < MENU.length; i++){
-      MENU[i].id = i;
+    for(let i = 0; i < this.AS.ACCOUNTS.length; i++){
+      this.AS.ACCOUNTS[i].id = i;
     }
   }
 
-  editEmployee(id:number,name:string,description:string,allergyInfo:string,category:string,price: number){
-    MENU[id]={
-      id: id,
-      name: name,
-      price: price,
-      description: description,
-      allergyInfo: allergyInfo,
-      category: category,
-    }
-  }
+  // editEmployee(id:number,name:string,description:string,allergyInfo:string,category:string,price: number){
+  //   this.AS.ACCOUNTS[id]={
+  //     id: number;
+  //     firstName: name;
+  //     lastName: string;
+  //     phone: number;
+  //     emailAddress: string;
+  //     password: string;
+  //     isEmployee: boolean;
+  //     isManager: boolean;
+  //   }
+  // }
 
   addPromotion(name:string,description:string,category:string){
     let p : promotion = {
