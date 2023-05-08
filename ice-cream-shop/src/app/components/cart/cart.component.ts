@@ -61,5 +61,4 @@ export class CartComponent implements OnInit{
     const index = this.items.indexOf(item);
     if (index >= 0) this.items.splice(index, 1);
   } 
-
 }
