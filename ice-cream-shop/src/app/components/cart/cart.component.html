@@ -2,9 +2,9 @@
   <h1>Shopping Cart</h1>
 
   <div class="item-card" *ngFor="let item of items">
-    <h4>Item Name Placeholder{{ item.name }}</h4>
-    <p>Price: $0.00 {{ item.price }}</p>
-    <p>Qty: 3 {{ item.price }}</p>
+    <h4>Item: {{ item.name }}</h4>
+    <p>Price: ${{ item.price }}</p>
+    <p>Qty: {{ item.price }}</p>
     <button class="btn-pink-fill" (click)="addMore(item)">+</button>
     <button class="btn-pink-fill" (click)="addLess(item)">-</button>
     <button class="btn-pink-fill" (click)="deleteItem(item)">Delete</button>
