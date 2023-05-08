@@ -6,6 +6,8 @@ import { ManagementService } from 'src/app/services/management.service';
 import { ManageComponent } from '../manage/manage.component';
 import { promotion } from 'src/app/model/promotion';
 import { PROMOTIONS } from 'src/app/data/promotion-data';
+import { Account } from 'src/app/model/account';
+import { AccountService } from 'src/app/services/account.service';
 
 @Component({
   selector: 'app-edit',
@@ -20,7 +22,7 @@ export class EditComponent {
   placeID: number = 0;
   menuList: menuEntry[] = MENU;
   promoList: promotion[] = PROMOTIONS;
-
+  employeeList: Account[] = this.AS.ACCOUNTS;
 
   menuForm = this.fb.group({
     name: ['', Validators.required],
@@ -33,7 +35,17 @@ export class EditComponent {
   promoForm = this.fb.group({
     name: ['', Validators.required],
     description: ['', Validators.required],
-    category: ['']
+    category: [''],
+  });
+
+  employeeForm = this.fb.group({
+    firstName: ['', Validators.required],
+    lastName: ['', Validators.required],
+    emailAddress: ['', Validators.required],
+    password: ['', Validators.required],
+    phone: [0, Validators.max(9999999999)],
+    isEmployee: false,
+    isManager: false,
   });
 
   ngOnInit(): void {
@@ -49,7 +61,7 @@ export class EditComponent {
         .get('allergenInfo')
         ?.setValue(this.menuList[this.mc.editID].allergyInfo);
       this.menuForm.get('price')?.setValue(this.menuList[this.mc.editID].price);
-    
+
       //--------------------------------------------------------------------
 
       this.promoForm.get('name')?.setValue(this.promoList[this.mc.editID].name);
@@ -60,21 +72,49 @@ export class EditComponent {
         .get('category')
         ?.setValue(this.promoList[this.mc.editID].category);
 
+      //---------------------------------------------------------------------
+
+      this.employeeForm
+        .get('firstName')
+        ?.setValue(this.employeeList[this.mc.editID].firstName);
+        this.employeeForm
+        .get('lastName')
+        ?.setValue(this.employeeList[this.mc.editID].lastName);
+        this.employeeForm
+        .get('phone')
+        ?.setValue(this.employeeList[this.mc.editID].phone);
+        this.employeeForm
+        .get('emailAddress')
+        ?.setValue(this.employeeList[this.mc.editID].emailAddress);
+        this.employeeForm
+        .get('password')
+        ?.setValue(this.employeeList[this.mc.editID].password);
+        this.employeeForm
+        .get('isEmployee')
+        ?.setValue(this.employeeList[this.mc.editID].isEmployee);
+        this.employeeForm
+        .get('isManager')
+        ?.setValue(this.employeeList[this.mc.editID].isManager);
     }
+  }
+
+  get f(){
+    return this.menuForm.invalid
   }
 
   constructor(
     private fb: FormBuilder,
     public ms: ManagementService,
-    private mc: ManageComponent
+    private mc: ManageComponent,
+    public AS: AccountService
   ) {
-    if(this.mc.last == "promo"){
+    if (this.mc.last == 'promo') {
       this.toPromotion();
-    }    
-    if(this.mc.last == "menu"){
+    }
+    if (this.mc.last == 'menu') {
       this.toMenu();
     }
-    if(this.mc.last == "employee"){
+    if (this.mc.last == 'employee') {
       this.toEmployee();
     }
   }
